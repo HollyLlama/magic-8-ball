@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
   var magic8ball = {};
-    magic8ball.randomAnswers = ["Maybe, does it matter?", "Who cares", "Your questions are boring", "YES... whatever", "Could be", "Not in the least", "I don't like to give bad news", "Isn't it obvious?", "You don't wanna know", "I hate you", "Is that the best you've got?", "Welp, it's a mystery", "Funny you ask, I don't know", "The answer will come to you", "Skittles", "You already know", "Really?", "How should I know?", "Mind your own bee's wax"];
+    magic8ball.randomAnswers = ["Maybe, does it matter?", "Who cares", "Your questions are boring", "YES... whatever", "Could be", "Not in the least", "I don't like to give bad news", "Isn't it obvious?", "You don't wanna know", "Wouldn't you like to know", "Is that the best you've got?", "Welp, it's a mystery", "Funny you ask, I don't know", "The answer will come to you", "Skittles", "You already know", "Really?", "How should I know?", "Mind your own bee's wax"];
 
     $("#answer").hide();
 
@@ -19,18 +19,17 @@ $(document).ready(function(){
 
   var clicketyClick = function () {
     $("#answer").hide();
-
-	  $("#8ball").attr("src", "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/8side.png");
+	  $("#eightball").attr("src", "img/magic-eight-ball.png");
 
 //wait half a second before showing prompt
     setTimeout(
        function() {
            //show prompt
-           var question = prompt()
-           $("#8ball").attr("src", "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/answerside.png");
-           $("#8ball").effect("shake");
+           var question = prompt("What do you wanna know?")
+           $("#eightball").effect("shake");
+           $("#eightball").attr("src", "img/magic-eight-ball-and-answer.png");
            magic8ball.question()
-       }, 500);
+       }, 800);
   };
 
   $("#questionButton").click(clicketyClick);
